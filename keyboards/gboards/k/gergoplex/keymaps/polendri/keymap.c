@@ -14,16 +14,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+-----+-----+-----+-----|      |-----+-----+-----+-----+--------|
  * | CTRL/: |  Q  |  J  |  K  |  X  |      |  B  |  M  |  W  |  V  | CTRL/Z |
  * `--------+-----+-----+-----+-----'      `-----+-----+-----+-----+--------'
- * ,--------------------------------.    ,-----------------------.
- * | ESC/META | ENT/ALT | CLCK(SYM) |    | SPC(NUM) | BSPC | TAB |
- * `----------+---------+-----------'    `----------+------+-----'
+ *  ,--------------------------------.    ,-----------------------.
+ *  | ESC/META | CLCK(SYM) | ENT/ALT |    | BSPC | SPC(NUM) | TAB |
+ *  `----------+---------+-----------'    `------+----------+-----'
  */
 [BASE] = LAYOUT_gergoplex(
     KC_QUOT,               KC_COMM, KC_DOT, KC_P, KC_Y,     KC_F, KC_G, KC_C, KC_R, KC_L, 
     MT(MOD_LSFT, KC_A),    KC_O,    KC_E,   KC_U, KC_I,     KC_D, KC_H, KC_T, KC_N, MT(MOD_RSFT, KC_S),
     MT(MOD_LCTL, KC_SCLN), KC_Q,    KC_J,   KC_K, KC_X,     KC_B, KC_M, KC_W, KC_V, MT(MOD_RCTL, KC_Z),
-    MT(MOD_LGUI, KC_ESC), MT(MOD_LALT, KC_ENT), LT(SYMB, KC_CLCK),
-    LT(NUMB, KC_SPC),     KC_BSPC,                KC_TAB
+    MT(MOD_LGUI, KC_ESC),  LT(SYMB, KC_CLCK), MT(MOD_LALT, KC_ENT),
+    KC_BSPC,               LT(NUMB, KC_SPC),  KC_TAB
     ),
 
 /* Keymap 1: Symbols layer
@@ -53,14 +53,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |-------+-----+-----+-----+-----|      |-------------------------------|
  * |  F6   | F7  | F8  | F9  | F10 |      |HOME |PGDN |PGUP | END | VOLDN |
  * `-------+-----+-----+-----+-----'      `-------------------------------'
- *              ,-----------------.      ,-----------------.
- *              | F11 | F12 |     |      |     | PLY | SKP |
- *              `-----------------'      `-----------------'
+ *               ,------------------.    ,-----------------.
+ *               | F11 | F12 | MNXT |    | PLY |     | SPC |
+ *               `------------------'    `-----------------'
  */
 [NUMB] = LAYOUT_gergoplex(
     KC_1,  KC_2,  KC_3,    KC_4,   KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
     KC_F1, KC_F2, KC_F3,   KC_F4,  KC_F5,      KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_VOLU,
     KC_F6, KC_F7, KC_F8,   KC_F9,  KC_F10,     KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_VOLD,
-                  KC_F11,  KC_F12, KC_NO,      KC_NO,   KC_MPLY, KC_MNXT
+                  KC_F11,  KC_F12, KC_MNXT,    KC_MPLY, KC_NO,   KC_SPC
     )
 };
